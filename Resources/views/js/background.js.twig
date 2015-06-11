@@ -1,0 +1,14 @@
+{% if backgrounds|length %}
+    {% if backgrounds|first.imagenes|length == 1 and backgrounds|first.imagenes|first.published %}
+        $.backstretch("{{ backgrounds|first.imagenes|first.webpath }}");
+        {# /images/611ef2763d9e6c9d85d82f5d6a34428d76a113e5.jpeg #}
+    {% elseif backgrounds|first.imagenes|length > 1 %}
+        $.backstretch([
+        {% for background in backgrounds|first.imagenes %}
+          {% if background.published %}
+            "{{ background.webpath }}",
+          {% endif %}
+        {% endfor %}
+        ], {duration: 4000});
+    {% endif %}
+{% endif %}        

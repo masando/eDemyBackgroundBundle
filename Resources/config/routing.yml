@@ -1,0 +1,6 @@
+edemy_background:
+    path:           /{_locale}/background
+    defaults:       { _controller: edemy.main:indexAction }
+    methods:        [ GET, POST ]
+    requirements:   { _locale: es|en }
+

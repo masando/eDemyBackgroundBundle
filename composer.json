@@ -1,0 +1,22 @@
+{
+  "name" : "edemy/backgroundbundle",
+  "description" : "Background Bundle for eDemy Framework",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Manuel Sanchís",
+    "email" : "msanchis@edemy.es"
+  }],
+  "keywords" : [
+    "edemy background bundle"
+  ],
+  "license" : [
+    "GNU v2"
+  ],
+  "require" : {
+    "edemy/backgroundbundle": "*"
+  },
+  "autoload" : {
+    "psr-0" : { "eDemy\\BackgroundBundle" : "" }
+  },
+  "target-dir": "eDemy/BackgroundBundle"
+}
