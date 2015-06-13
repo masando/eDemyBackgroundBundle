@@ -6,8 +6,26 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class eDemyBackgroundBundle extends Bundle
 {
-    public static function getBundleName()
+    public static function getBundleName($type = null)
     {
-        return 'eDemyBackgroundBundle';
+        if ($type == null) {
+
+            return 'eDemyBackgroundBundle';
+        } else {
+            if ($type == 'Simple') {
+
+                return 'Background';
+            } else {
+                if ($type == 'simple') {
+
+                    return 'background';
+                }
+            }
+        }
+    }
+
+    public static function eDemyBundle() {
+
+        return true;
     }
 }

@@ -22,12 +22,10 @@ class eDemyBackgroundExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        if($config['enabled']) {
-            $this->addClassesToCompile(array(
-                'eDemy\\BackgroundBundle\\Controller\\BackgroundController',
-            ));
-            $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-            $loader->load('services.yml');
-        }
+        $this->addClassesToCompile(array(
+            'eDemy\\BackgroundBundle\\Controller\\BackgroundController',
+        ));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.yml');
     }
 }
