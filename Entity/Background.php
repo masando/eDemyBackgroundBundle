@@ -21,7 +21,7 @@ class Background extends BaseEntity
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Imagen", mappedBy="background", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="eDemy\BackgroundBundle\Entity\BackgroundImagen", mappedBy="background", cascade={"persist","remove"})
      */
     protected $imagenes;
 
@@ -31,13 +31,13 @@ class Background extends BaseEntity
         return $this->imagenes;
     }
 
-    public function addImagen(Imagen $imagen)
+    public function addImagen(BackgroundImagen $imagen)
     {
         $imagen->setBackground($this);
         $this->imagenes->add($imagen);
     }
 
-    public function removeImagen(Imagen $imagen)
+    public function removeImagen(BackgroundImagen $imagen)
     {
         $this->imagenes->removeElement($imagen);
         $this->getEntityManager()->remove($imagen);

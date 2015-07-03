@@ -12,7 +12,7 @@ use eDemy\MainBundle\Entity\BaseImagen;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Imagen extends BaseImagen
+class BackgroundImagen extends BaseImagen
 {
     /**
      * @ORM\ManyToOne(targetEntity="eDemy\BackgroundBundle\Entity\Background", inversedBy="imagenes")
