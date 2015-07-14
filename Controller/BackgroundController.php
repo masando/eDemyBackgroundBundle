@@ -53,8 +53,6 @@ class BackgroundController extends BaseController
             
             $backgrounds = $this->findAll('Background');
 
-//            die(var_dump($backgrounds[0]->getImagenes()[0]->getWebpath()));
-            
             $this->addEventModule($event, "assets/background", array(
                 'params' => $params,
                 'backgrounds' => $backgrounds,
