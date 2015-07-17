@@ -51,7 +51,10 @@ class BackgroundController extends BaseController
                 $params = array();
             }
             
-            $backgrounds = $this->findAll('Background');
+            $repo = $this->getRepository('eDemyBackgroundBundle:Background');
+            //die(var_dump($repo));
+            $backgrounds = $repo->findAll();
+            //die(var_dump($backgrounds));
 
             $this->addEventModule($event, "assets/background", array(
                 'params' => $params,

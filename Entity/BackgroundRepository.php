@@ -9,10 +9,14 @@ class BackgroundRepository extends EntityRepository
     public function findAll($namespace = null)
     {
         $qb = $this->createQueryBuilder('b');
-        $qb->andWhere('b.namespace = :namespace');
+        if($namespace == null) {
+            $qb->andWhere('b.namespace is null');
+        } else {
+            $qb->andWhere('b.namespace = :namespace');
+            $qb->setParameter('namespace', $namespace);
+        }
         $qb->andWhere('b.published = true');
-        $qb->orderBy('b.nombre','ASC');
-        $qb->setParameter('namespace', $namespace);
+        $qb->orderBy('b.name','ASC');
         $query = $qb->getQuery();
 
         return $query->getResult();
