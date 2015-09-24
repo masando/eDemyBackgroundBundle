@@ -12,7 +12,8 @@ class BackgroundController extends BaseController
     public static function getSubscribedEvents()
     {
         return self::getSubscriptions('background', ['background'], array(
-            'edemy_mainmenu'                        => array('onBackgroundMainMenu', 0),
+            'edemy_mainmenu'            => array('onBackgroundMainMenu', 0),
+            'edemy_js_module'           => array('onJsModule', 0),
         ));
     }
 
@@ -53,7 +54,7 @@ class BackgroundController extends BaseController
             
             $repo = $this->getRepository('eDemyBackgroundBundle:Background');
             //die(var_dump($repo));
-            $backgrounds = $repo->findAll();
+            $backgrounds = $repo->findAll($this->getNamespace());
             //die(var_dump($backgrounds));
 
             $this->addEventModule($event, "assets/background", array(
